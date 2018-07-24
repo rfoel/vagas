@@ -8,7 +8,7 @@ import { HomePage } from 'components'
 import theme from './themes/default'
 
 injectGlobal`
-  ${reset}
+  ${reset};
 `
 
 const App = () => {

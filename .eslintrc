@@ -22,6 +22,8 @@
     }
   },
   "rules": {
+    "object-curly-newline": "off",
+    "arrow-parens": "off",
     "semi": [2, "never"],
     "comma-dangle": [2, "always-multiline"],
     "max-len": 0,
