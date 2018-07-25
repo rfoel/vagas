@@ -1,35 +1,35 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
-import IconButton from '.'
+import ButtonWithIcon from '.'
 
-const wrap = (props = {}) => shallow(<IconButton icon="github" {...props} />)
+const wrap = (props = {}) => shallow(<ButtonWithIcon icon="github" {...props} />)
 
 it('mounts with different combination of props', () => {
-  mount(<IconButton icon="github">test</IconButton>)
+  mount(<ButtonWithIcon icon="github">test</ButtonWithIcon>)
   mount(
-    <IconButton icon="github" right>
+    <ButtonWithIcon icon="github" right>
       test
-    </IconButton>,
+    </ButtonWithIcon>,
   )
   mount(
-    <IconButton icon="github" responsive>
+    <ButtonWithIcon icon="github" responsive>
       test
-    </IconButton>,
+    </ButtonWithIcon>,
   )
   mount(
-    <IconButton icon="github" collapsed>
+    <ButtonWithIcon icon="github" collapsed>
       test
-    </IconButton>,
+    </ButtonWithIcon>,
   )
   mount(
-    <IconButton icon="github" right responsive>
+    <ButtonWithIcon icon="github" right responsive>
       test
-    </IconButton>,
+    </ButtonWithIcon>,
   )
-  mount(<IconButton icon="github" />)
-  mount(<IconButton icon="github" right />)
-  mount(<IconButton icon="github" responsive />)
-  mount(<IconButton icon="github" right responsive />)
+  mount(<ButtonWithIcon icon="github" />)
+  mount(<ButtonWithIcon icon="github" right />)
+  mount(<ButtonWithIcon icon="github" responsive />)
+  mount(<ButtonWithIcon icon="github" right responsive />)
 })
 
 it('renders children when passed in', () => {
