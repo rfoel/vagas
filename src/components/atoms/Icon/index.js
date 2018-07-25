@@ -13,7 +13,6 @@ const Wrapper = styled.span`
   color: currentColor;
   width: 1em;
   height: 1em;
-  margin: 0.1em;
   box-sizing: border-box;
 
   & > svg {
