@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import DOMLink from 'react-router-dom/Link'
 import styled from 'styled-components'
 import { font, palette } from 'styled-theme'
 
-const Anchor = styled(({ palette, ...props }) => <DOMLink {...props} />)`
+const Anchor = styled.a`
   text-decoration: none;
   cursor: pointer;
   font-family: ${font('primary')};
@@ -22,8 +21,10 @@ const Link = ({ ...props }) => {
 }
 
 Link.propTypes = {
-  palette: PropTypes.string,
   to: PropTypes.string,
+  href: PropTypes.string,
+  palette: PropTypes.string,
+  reverse: PropTypes.bool,
 }
 
 Link.defaultProps = {
