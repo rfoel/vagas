@@ -87,7 +87,7 @@ class Navigation extends Component {
     return (
       <Nav {...this.props}>
         <NavBrand>
-          <NavLink to="/">Front-End BR</NavLink>
+          <NavLink to="/">Front-End Brasil</NavLink>
           <NavBurger icon={this.state.isToggled ? 'close' : 'menu'} onClick={this.toggle} />
         </NavBrand>
         <NavMenu className={this.state.isToggled ? 'active' : null}>

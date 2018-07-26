@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { size } from 'styled-theme'
 import { Navigation, Footer } from 'components'
 
 const Wrapper = styled.div`
@@ -13,8 +14,10 @@ const Wrapper = styled.div`
 const Content = styled.section`
   width: 100%;
   box-sizing: border-box;
-  padding: 1rem;
+  padding: 0 1rem;
+  margin: 1rem auto;
   flex-grow: 1;
+  max-width: ${size('maxWidth')};
 `
 
 const MainTemplate = ({ children, ...props }) => {

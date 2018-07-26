@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   font-family: ${font('primary')};
   height: ${props => props.height}px;
   color: ${palette('gray', 0, true)};
-  background: ${palette(1)};
+  background: ${palette(2)};
   padding: 2rem;
 `
 
