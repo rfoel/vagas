@@ -28,8 +28,9 @@ const styles = css`
   font-size: ${fontSize};
   color: ${color};
   background ${background};
-  height: 2.5em;
-  padding: 0 1em;
+  height: 2.2em;
+  padding: 0 0.8em;
+  border-radius: 0.5em;
   appearance: none;
   box-sizing: border-box;
   transition: background-color 250ms ease-out, color 250ms ease-out, border-color 250ms ease-out;

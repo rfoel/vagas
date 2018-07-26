@@ -8,11 +8,12 @@ const fontSize = ({ width, height }) => {
 }
 
 const Wrapper = styled.span`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: ${fontSize};
   color: currentColor;
-  width: 1em;
-  height: 1em;
+  width: 0.8em;
+  height: 0.8em;
   box-sizing: border-box;
 
   & > svg {

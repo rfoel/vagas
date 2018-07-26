@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Link from 'react-router-dom/Link'
 import { font, palette } from 'styled-theme'
 
-import { Logo, Button, ButtonWithIcon } from 'components'
+import { ButtonWithIcon } from 'components'
 
 const mobileBreakpoint = '700px'
 
@@ -59,7 +59,7 @@ const NavLink = styled(({ reverse, palette, ...props }) => <Link {...props} />)`
   }
 `
 
-const NavButton = styled(({ reverse, palette, ...props }) => <Button {...props} palette={palette} />)`
+const NavButtonWithIcon = styled(({ reverse, palette, ...props }) => <ButtonWithIcon {...props} palette={palette} />)`
   margin: 0.35rem 1rem;
 `
 
@@ -67,8 +67,8 @@ const NavBurger = styled(({ reverse, palette, ...props }) => <ButtonWithIcon tra
   margin: 0.5rem 1rem;
   display: none;
   @media (max-width: ${mobileBreakpoint}) {
+    display: inline-flex;
     margin-left: auto;
-    display: block;
   }
 `
 
@@ -93,9 +93,9 @@ class Navigation extends Component {
         <NavMenu className={this.state.isToggled ? 'active' : null}>
           <NavLink to="/">Início</NavLink>
           <NavLink to="/vagas">Vagas</NavLink>
-          <NavButton palette="gray" reverse>
+          <NavButtonWithIcon icon="github" palette="gray" reverse>
             GitHub
-          </NavButton>
+          </NavButtonWithIcon>
         </NavMenu>
       </Nav>
     )
