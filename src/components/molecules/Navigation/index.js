@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Link from 'react-router-dom/Link'
 import { font, palette } from 'styled-theme'
 
-import { ButtonWithIcon } from 'components'
+import { Button, ButtonWithIcon } from 'components'
 
 const mobileBreakpoint = '700px'
 
@@ -12,6 +11,7 @@ const Nav = styled.nav`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  border-bottom: 1px solid ${palette('gray', 5)};
 `
 
 const NavBrand = styled.div`
@@ -33,10 +33,17 @@ const NavMenu = styled.ul`
   margin: 0;
   margin-left: auto;
   list-style: none;
+  > :last-child {
+    margin-left: 0.75rem;
+  }
   @media (max-width: ${mobileBreakpoint}) {
     display: none;
     text-align: center;
     margin: 0 auto;
+    > :last-child {
+      margin-left: 0;
+      margin-bottom: 1rem;
+    }
     &.active {
       flex-direction: column;
       flex-wrap: wrap;
@@ -45,26 +52,27 @@ const NavMenu = styled.ul`
   }
 `
 
-const NavLink = styled(({ reverse, palette, ...props }) => <Link {...props} />)`
+const NavLink = styled(({ reverse, palette, ...props }) => <Button transparent activeClassName="active" {...props} />)`
   font-family: ${font('primary')};
-  text-decoration: none;
-  color: ${palette('grayscale', 2)};
-  cursor: pointer;
-  padding: 1rem 1rem;
+  color: ${palette('gray', 2)};
+  margin: 0.5rem 0;
+  &.active {
+    background: ${palette('gray', 0, true)};
+  }
   &:hover {
-    color: ${palette('grayscale', 1)};
+    color: ${palette('gray', 1)};
   }
   &:active {
-    color: ${palette('grayscale', 0)};
+    color: ${palette('gray', 0)};
   }
 `
 
 const NavButtonWithIcon = styled(({ reverse, palette, ...props }) => <ButtonWithIcon {...props} palette={palette} />)`
-  margin: 0.35rem 1rem;
+  margin: 0.5rem 0 0;
 `
 
 const NavBurger = styled(({ reverse, palette, ...props }) => <ButtonWithIcon transparent {...props} />)`
-  margin: 0.5rem 1rem;
+  margin: 0.5rem 0 0;
   display: none;
   @media (max-width: ${mobileBreakpoint}) {
     display: inline-flex;
