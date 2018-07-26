@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import { injectGlobal, ThemeProvider } from 'styled-components'
 import reset from 'styled-reset'
 
-import { HomePage } from 'components'
+import { HomePage, JobsPage } from 'components'
 
 import theme from './themes/default'
 
@@ -16,6 +16,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Switch>
         <Route path="/" component={HomePage} exact />
+        <Route path="/vagas" component={JobsPage} exact />
       </Switch>
     </ThemeProvider>
   )
