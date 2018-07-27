@@ -68,7 +68,11 @@ const NavLink = styled(({ reverse, palette, ...props }) => <Button transparent a
 `
 
 const NavButtonWithIcon = styled(({ reverse, palette, ...props }) => <ButtonWithIcon {...props} palette={palette} />)`
-  margin: 0.5rem 0 0;
+  margin: 0.5rem;
+  @media (max-width: ${mobileBreakpoint}) {
+    margin-right: 0;
+    margin-left: 0;
+  }
 `
 
 const NavBurger = styled(({ reverse, palette, ...props }) => <ButtonWithIcon transparent {...props} />)`
