@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { font, palette } from 'styled-theme'
 
-import { Button, ButtonWithIcon } from 'components'
+import { Link, ButtonWithIcon } from 'components'
 
 const mobileBreakpoint = '700px'
 
@@ -52,18 +52,29 @@ const NavMenu = styled.ul`
   }
 `
 
-const NavLink = styled(({ reverse, palette, ...props }) => <Button transparent activeClassName="active" {...props} />)`
+const NavLink = styled(({ reverse, palette, ...props }) => <Link {...props} />)`
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: center;
   font-family: ${font('primary')};
   color: ${palette('gray', 2)};
-  margin: 0.5rem 0;
-  &.active {
-    background: ${palette('gray', 0, true)};
-  }
+  margin: 0.5rem 0.3rem;
+  height: 2.2em;
+  padding: 0 0.8em;
+  border-radius: 0.5em;
+
   &:hover {
     color: ${palette('gray', 1)};
+    background: ${palette('gray', 2, true)};
   }
   &:active {
     color: ${palette('gray', 0)};
+    background: ${palette('gray', 3, true)};
+  }
+
+  @media (max-width: ${mobileBreakpoint}) {
+    margin: 0;
   }
 `
 
@@ -76,7 +87,6 @@ const NavButtonWithIcon = styled(({ reverse, palette, ...props }) => <ButtonWith
 `
 
 const NavBurger = styled(({ reverse, palette, ...props }) => <ButtonWithIcon transparent {...props} />)`
-  margin: 0.5rem 0 0;
   display: none;
   @media (max-width: ${mobileBreakpoint}) {
     display: inline-flex;
@@ -105,7 +115,7 @@ class Navigation extends Component {
         <NavMenu className={this.state.isToggled ? 'active' : null}>
           <NavLink to="/">Início</NavLink>
           <NavLink to="/vagas">Vagas</NavLink>
-          <NavButtonWithIcon icon="github" palette="gray" reverse>
+          <NavButtonWithIcon icon="github" palette="gray" reverse href="https://github.com/rfoel/vagas" target="_blank">
             GitHub
           </NavButtonWithIcon>
         </NavMenu>

@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { font, palette } from 'styled-theme'
+import NavLink from 'react-router-dom/NavLink'
 
-const Anchor = styled.a`
+const styles = css`
   text-decoration: none;
   cursor: pointer;
   font-family: ${font('primary')};
@@ -16,7 +17,18 @@ const Anchor = styled.a`
   }
 `
 
+const StyledNavLink = styled(({ theme, reverse, palette, ...props }) => <NavLink {...props} />)`
+  ${styles};
+`
+
+const Anchor = styled.a`
+  ${styles};
+`
+
 const Link = ({ ...props }) => {
+  if (props.to) {
+    return <StyledNavLink onlyActiveOnIndex {...props} />
+  }
   return <Anchor {...props} />
 }
 

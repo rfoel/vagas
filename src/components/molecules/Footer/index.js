@@ -12,8 +12,8 @@ const StyledFooter = styled.footer`
   box-sizing: border-box;
   font-family: ${font('primary')};
   height: ${props => props.height}px;
-  color: ${palette('gray', 0, true)};
-  background: ${palette(2)};
+  color: ${palette(0, true)};
+  background: ${palette(0)};
   padding: 2rem;
 `
 

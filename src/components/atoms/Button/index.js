@@ -59,9 +59,15 @@ const StyledButton = styled.button`
   ${styles};
 `
 
+const Anchor = styled.a`
+  ${styles};
+`
+
 const Button = ({ type, ...props }) => {
   if (props.to) {
     return <StyledLink {...props} />
+  } else if (props.href) {
+    return <Anchor {...props} />
   }
   return <StyledButton {...props} type={type} />
 }
@@ -74,6 +80,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   transparent: PropTypes.bool,
   outlined: PropTypes.bool,
+  href: PropTypes.string,
 }
 
 Button.defaultProps = {
