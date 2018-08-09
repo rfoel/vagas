@@ -4,7 +4,7 @@ const theme = {};
 
 theme.palette = {
   primary: ['#5F4B8B'],
-  grayscale: ['#2b365f', '#334071', '#3b4a82', '#d3d8eb', '#e4e7f3', '#f6f7fb']
+  grayscale: ['#2b365f', '#334071', '#3b4a82', '#c1c8e3', '#d3d8eb', '#e4e7f3']
 };
 
 theme.reversePalette = reversePalette(theme.palette);

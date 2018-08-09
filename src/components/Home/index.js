@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
 
-import SearchButton from '../SearchButton';
-
 const HomeWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -21,7 +19,6 @@ const HomeWrapper = styled.div`
 const Home = () => (
   <HomeWrapper>
     <h2>Espaço para divulgação de vagas para front-enders</h2>
-    <SearchButton />
   </HomeWrapper>
 );
 

@@ -9,7 +9,7 @@ const HeaderWrapper = styled.header`
   height: 100px;
   background: #fff;
   font-weight: 300;
-  color: ${palette('grayscale', 1, true)};
+  color: ${palette('grayscale', 1)};
 
   h1 {
     font-size: 1.3rem;
